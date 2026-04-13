@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wild Willy's One Page Template</title>
+  <meta name="description" content="Responsive one-page website template featuring a branded header and marketplace links for Whatnot and eBay." />
+  <meta property="og:title" content="Wild Willy's One Page Template" />
+  <meta property="og:description" content="Responsive one-page landing template with a neon marketplace theme." />
+  <meta property="og:image" content="./assets/header.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;800&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root, [data-theme="light"] {
+      --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+      --text-sm: clamp(0.875rem, 0.8rem + 0.35vw, 1rem);
+      --text-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+      --text-lg: clamp(1.125rem, 1rem + 0.75vw, 1.5rem);
+      --text-xl: clamp(1.5rem, 1.2rem + 1.25vw, 2.25rem);
+      --text-2xl: clamp(2rem, 1.2rem + 2.5vw, 3.5rem);
+      --space-1: 0.25rem; --space-2: 0.5rem; --space-3: 0.75rem; --space-4: 1rem; --space-5: 1.25rem; --space-6: 1.5rem; --space-8: 2rem; --space-10: 2.5rem; --space-12: 3rem; --space-16: 4rem; --space-20: 5rem;
+      --radius-sm: 0.375rem; --radius-md: 0.75rem; --radius-lg: 1.25rem; --radius-xl: 1.75rem; --radius-full: 9999px;
+      --font-display: 'Orbitron', 'Arial', sans-serif;
+      --font-body: 'Rajdhani', 'Arial', sans-serif;
+      --color-bg: #061108;
+      --color-surface: #0b1a10;
+      --color-surface-2: #102315;
+      --color-surface-offset: #132b18;
+      --color-border: rgba(164, 255, 85, 0.18);
+      --color-divider: rgba(255,255,255,0.10);
+      --color-text: #f3ffe8;
+      --color-text-muted: #b6d4b0;
+      --color-text-faint: #7fa57c;
+      --color-primary: #8aff2c;
+      --color-primary-hover: #b4ff63;
+      --color-primary-active: #6ae100;
+      --color-text-inverse: #081108;
+      --shadow-sm: 0 2px 10px rgba(0,0,0,0.2);
+      --shadow-md: 0 18px 40px rgba(0,0,0,0.35);
+      --shadow-lg: 0 28px 60px rgba(43, 255, 0, 0.18);
+      --content-wide: 1200px;
+      --transition-interactive: 180ms cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    *,:before,:after{box-sizing:border-box;margin:0;padding:0}
+    html{-webkit-text-size-adjust:none;text-size-adjust:none;scroll-behavior:smooth}
+    body{min-height:100dvh;font-family:var(--font-body);font-size:var(--text-base);line-height:1.6;background:
+      radial-gradient(circle at top left, rgba(133,255,40,0.22), transparent 30%),
+      radial-gradient(circle at bottom right, rgba(70,255,180,0.12), transparent 25%),
+      linear-gradient(180deg, #040906 0%, #081108 45%, #040705 100%);
+      color:var(--color-text)}
+    img,svg{display:block;max-width:100%;height:auto}
+    a,button{transition:all var(--transition-interactive)}
+    a{color:inherit;text-decoration:none}
+    .skip-link{position:absolute;left:-9999px;top:auto}.skip-link:focus{left:1rem;top:1rem;background:#fff;color:#000;padding:.5rem 1rem;border-radius:999px;z-index:1000}
+    .site-shell{width:min(100% - 2rem, var(--content-wide));margin-inline:auto}
+    .site-header{position:sticky;top:0;z-index:20;background:rgba(6,17,8,.78);backdrop-filter:blur(14px);border-bottom:1px solid var(--color-divider)}
+    .nav-wrap{display:flex;align-items:center;justify-content:space-between;gap:var(--space-4);padding:var(--space-4) 0}
+    .brand-mark{display:flex;align-items:center;gap:var(--space-3);font-family:var(--font-display);font-size:var(--text-sm);letter-spacing:.12em;text-transform:uppercase}
+    .brand-dot{width:0.95rem;height:0.95rem;border-radius:50%;background:radial-gradient(circle, #d5ffae 0%, #89ff2d 45%, #0e240b 100%);box-shadow:0 0 20px rgba(138,255,44,.75)}
+    .nav-links{display:flex;align-items:center;gap:var(--space-4);flex-wrap:wrap}
+    .nav-links a{padding:0.75rem 1rem;border-radius:var(--radius-full);font-size:var(--text-sm);letter-spacing:.06em;text-transform:uppercase;color:var(--color-text-muted)}
+    .nav-links a:hover,.nav-links a:focus-visible{background:rgba(138,255,44,.12);color:var(--color-text)}
+    main{padding:var(--space-8) 0 var(--space-16)}
+    .hero-panel{position:relative;overflow:hidden;border:1px solid var(--color-border);border-radius:var(--radius-xl);background:linear-gradient(180deg, rgba(16,35,21,.95), rgba(7,15,9,.96));box-shadow:var(--shadow-md)}
+    .hero-image{aspect-ratio: 21 / 8; width:100%; object-fit:cover; object-position:center}
+    .hero-copy{display:grid;gap:var(--space-4);padding:clamp(var(--space-6), 4vw, var(--space-12))}
+    .eyebrow{font-size:var(--text-xs);text-transform:uppercase;letter-spacing:.22em;color:var(--color-primary)}
+    h1{font-family:var(--font-display);font-size:var(--text-2xl);line-height:1.04;text-transform:uppercase;text-shadow:0 0 20px rgba(138,255,44,.18)}
+    .hero-copy p{max-width:62ch;color:var(--color-text-muted)}
+    .cta-row{display:flex;gap:var(--space-4);flex-wrap:wrap}
+    .button{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0.9rem 1.3rem;border-radius:var(--radius-full);font-size:var(--text-sm);font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+    .button-primary{background:linear-gradient(135deg, var(--color-primary), #62d800);color:var(--color-text-inverse);box-shadow:0 0 24px rgba(138,255,44,.3)}
+    .button-primary:hover,.button-primary:focus-visible{transform:translateY(-1px);filter:brightness(1.04)}
+    .button-secondary{border:1px solid var(--color-border);background:rgba(255,255,255,.03);color:var(--color-text)}
+    .button-secondary:hover,.button-secondary:focus-visible{background:rgba(138,255,44,.10)}
+    .marketplaces{padding:clamp(var(--space-10), 7vw, var(--space-20)) 0}
+    .section-heading{display:grid;gap:var(--space-3);margin-bottom:var(--space-8);text-align:center}
+    .section-heading h2{font-family:var(--font-display);font-size:var(--text-xl);text-transform:uppercase}
+    .section-heading p{margin-inline:auto;color:var(--color-text-muted);max-width:56ch}
+    .market-grid{display:grid;grid-template-columns:repeat(2, minmax(0, 1fr));gap:clamp(var(--space-6), 4vw, var(--space-10))}
+    .market-card{position:relative;display:grid;justify-items:center;gap:var(--space-5);padding:clamp(var(--space-6), 5vw, var(--space-10));border-radius:calc(var(--radius-xl) + 0.25rem);background:linear-gradient(180deg, rgba(17,42,21,.96), rgba(9,18,11,.98));border:1px solid var(--color-border);box-shadow:var(--shadow-lg);overflow:hidden}
+    .market-card::before{content:"";position:absolute;inset:auto -10% -35% -10%;height:55%;background:radial-gradient(circle, rgba(138,255,44,.22), transparent 60%);pointer-events:none}
+    .logo-disc{position:relative;display:grid;place-items:center;width:min(100%, 19rem);aspect-ratio:1;border-radius:50%;background:
+      radial-gradient(circle at 30% 30%, rgba(255,255,255,.14), transparent 30%),
+      radial-gradient(circle at 70% 70%, rgba(138,255,44,.12), transparent 25%),
+      linear-gradient(180deg, #122515, #09120c 70%);
+      border:1px solid rgba(154,255,100,.28);
+      box-shadow:inset 0 0 40px rgba(138,255,44,.08), 0 0 35px rgba(138,255,44,.16)}
+    .logo-ring{position:absolute;inset:1rem;border-radius:50%;border:1px solid rgba(255,255,255,.09)}
+    .market-label{position:relative;display:grid;gap:var(--space-2);text-align:center}
+    .market-label h3{font-family:var(--font-display);font-size:var(--text-lg);text-transform:uppercase}
+    .market-label p{color:var(--color-text-muted);max-width:28ch}
+    .badge{display:inline-flex;align-items:center;gap:var(--space-2);padding:0.45rem 0.85rem;border-radius:var(--radius-full);background:rgba(138,255,44,.12);color:var(--color-primary);font-size:var(--text-xs);letter-spacing:.12em;text-transform:uppercase}
+    .whatnot-svg,.ebay-svg{width:68%;height:auto;filter:drop-shadow(0 0 16px rgba(138,255,44,.14))}
+    .whatnot-svg text,.ebay-svg text{font-family:var(--font-display)}
+    .contact-panel{display:grid;gap:var(--space-4);padding:clamp(var(--space-6), 4vw, var(--space-10));border-radius:var(--radius-xl);background:linear-gradient(180deg, rgba(11,26,16,.92), rgba(6,14,8,.96));border:1px solid var(--color-border)}
+    .contact-panel h2{font-family:var(--font-display);font-size:var(--text-xl);text-transform:uppercase}
+    .contact-panel p{color:var(--color-text-muted);max-width:58ch}
+    .contact-links{display:flex;flex-wrap:wrap;gap:var(--space-4)}
+    footer{padding:0 0 var(--space-10);color:var(--color-text-faint);font-size:var(--text-sm)}
+    @media (max-width: 760px){
+      .nav-wrap{flex-direction:column;align-items:flex-start}
+      .nav-links{width:100%}
+      .market-grid{grid-template-columns:1fr}
+      .hero-image{aspect-ratio: 5 / 7; object-position:center}
+      .hero-copy{text-align:left}
+      .cta-row,.contact-links{flex-direction:column;align-items:stretch}
+      .button{width:100%}
+    }
+    @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{transition:none!important}}
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="site-shell nav-wrap">
+      <a class="brand-mark" href="#home" aria-label="Go to home">
+        <span class="brand-dot" aria-hidden="true"></span>
+        <span>Wild Willy's Shop</span>
+      </a>
+      <nav aria-label="Primary navigation">
+        <div class="nav-links">
+          <a href="#home">Home</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section id="home" class="site-shell hero-panel" aria-labelledby="hero-title">
+      <img class="hero-image" src="website-header-magtag.png" alt="Website header artwork showing Olomax, Wild Willy's Collectables, and Will in a neon green futuristic cityscape" width="1792" height="768" />
+      <div class="hero-copy">
+        <span class="eyebrow">Live cards • Collectibles • Community</span>
+        <h1 id="hero-title">Choose your marketplace and start hunting the cardboard hoard</h1>
+        <p>We are on a couple of different platforms depending on the product. Come check us out! We are based in Jamestown, ND and can facilitate local sales as well.</p>
+        <div class="cta-row">
+          <a class="button button-primary" href="#marketplaces">Explore links</a>
+          <a class="button button-secondary" href="#contact">Get in touch</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="marketplaces" class="marketplaces site-shell" aria-labelledby="market-title">
+      <div class="section-heading">
+        <span class="eyebrow">Marketplace links</span>
+        <h2 id="market-title">Live shows and auction sales</h2>
+        <p></p>
+      </div>
+      <div class="market-grid">
+        <article class="market-card">
+          <span class="badge">Whatnot</span>
+          <a class="logo-disc" href="https://www.whatnot.com/user/olomax" target="_blank" rel="noopener noreferrer" aria-label="Visit Whatnot">
+            <span class="logo-ring" aria-hidden="true"></span>
+            <svg class="whatnot-svg" viewBox="0 0 240 240" role="img" aria-label="Whatnot icon inspired by the official Whatnot brand mark">
+              <defs>
+                <linearGradient id="wnBrand" x1="0%" x2="100%" y1="0%" y2="100%">
+                  <stop offset="0%" stop-color="#ffe15a"/>
+                  <stop offset="100%" stop-color="#ffb800"/>
+                </linearGradient>
+              </defs>
+              <circle cx="120" cy="120" r="98" fill="none" stroke="rgba(154,255,90,.22)" stroke-width="10"/>
+              <rect x="46" y="46" width="148" height="148" rx="44" fill="url(#wnBrand)"/>
+              <path d="M84 89c10-10 26-10 36 0l0 0 0 0c10-10 26-10 36 0 10 10 10 26 0 36l-36 36-36-36c-10-10-10-26 0-36z" fill="#111111"/>
+            </svg>
+          </a>
+          <div class="market-label">
+            <h3>Olomax on Whatnot</h3>
+            <p>Find our live streams featuring popular TCGs!</p>
+          </div>
+        </article>
+
+        <article class="market-card">
+          <span class="badge">eBay</span>
+          <a class="logo-disc" href="https://www.ebay.com/usr/wildwillyscollectables" target="_blank" rel="noopener noreferrer" aria-label="Visit eBay">
+            <span class="logo-ring" aria-hidden="true"></span>
+            <svg class="ebay-svg" viewBox="0 0 260 180" role="img" aria-label="Stylized eBay logo graphic">
+              <circle cx="130" cy="90" r="88" fill="none" stroke="rgba(154,255,90,.22)" stroke-width="10"/>
+              <text x="28" y="112" font-size="78" font-weight="800" fill="#e53238">e</text>
+              <text x="76" y="112" font-size="78" font-weight="800" fill="#0064d2">b</text>
+              <text x="126" y="112" font-size="78" font-weight="800" fill="#f5af02">a</text>
+              <text x="177" y="112" font-size="78" font-weight="800" fill="#86b817">y</text>
+            </svg>
+          </a>
+          <div class="market-label">
+            <h3>eBay</h3>
+            <p>Our eBay storfront - you will find auctions, buy it now, and a wider variety of collectabls!</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact" class="site-shell contact-panel" aria-labelledby="contact-title">
+      <span class="eyebrow">Contact</span>
+      <h2 id="contact-title">Reach out with sales inquiries and website questions</h2>
+      <p></p>
+      <div class="contact-links">
+        <a class="button button-primary" href="mailto:sales@wildwillys.shop">sales@wildwillys.shop</a>
+		<a class="button button-primary" href="mailto:website@wildwillys.shop">website@wildwillys.shop</a>
+        <a class="button button-secondary" href="#home">Back to top</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-shell">
+    <center><p>Copyright 2026 Wild Willy’s Collectables, LLC., a North Dakota Limited Liability Corporation, ND Sales & Use Tax 
+#390965 00. <i>"Olomax"</i> and <i>"Will"</i> are online personas of the father and son team who make up Wild Willy's Collectables!</p>
+  </footer></center>
+</body>
+</html>
