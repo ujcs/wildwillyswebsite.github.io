@@ -112,6 +112,19 @@
       .button{width:100%}
     }
     @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{transition:none!important}}
+	
+	.final-notes-content{
+  display:grid;
+  gap:var(--space-4);
+  justify-items:center;
+  text-align:center;
+}
+.final-notes-content img{
+  max-width:min(50%,18rem);
+  width:50%;
+  margin-inline:auto;
+}
+
   </style>
 </head>
 <body>
@@ -208,6 +221,17 @@
         <a class="button button-secondary" href="#home">Back to top</a>
       </div>
     </section>
+	
+<section class="site-shell contact-panel" aria-labelledby="final-notes-title">
+  <span class="eyebrow">Final notes</span>
+  <h2 id="final-notes-title">Final notes</h2>
+  <div class="final-notes-content">
+    <img src="Mom_Logo_Transparent_bg.png" alt="Cardboard Mom" width="512" height="512" style="width:50%;" />
+    <p>Cardboard mom disapproves of poor behavior. Have fun collecting, be a good sport in play, and bid responsibly when growing your collection.</p>
+
+  </div>
+</section>
+
   </main>
 
   <footer class="site-shell">
