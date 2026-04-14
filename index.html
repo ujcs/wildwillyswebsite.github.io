@@ -124,6 +124,29 @@
   width:50%;
   margin-inline:auto;
 }
+.wildwillys-landing .invite-button {
+  display: inline-block;
+  width: min(100%, 22rem);
+  margin-top: var(--space-3);
+  margin-inline: auto;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: 0 10px 24px rgba(138, 255, 44, 0.22);
+  transform: translateY(0);
+}
+
+.wildwillys-landing .invite-button img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: inherit;
+}
+
+.wildwillys-landing .invite-button:hover,
+.wildwillys-landing .invite-button:focus-visible {
+  transform: translateY(-2px) scale(1.01);
+  box-shadow: 0 14px 30px rgba(138, 255, 44, 0.34);
+}
 
   </style>
 </head>
@@ -181,14 +204,15 @@
               <path d="M84 89c10-10 26-10 36 0l0 0 0 0c10-10 26-10 36 0 10 10 10 26 0 36l-36 36-36-36c-10-10-10-26 0-36z" fill="#111111"/>
             </svg>
           </a>
-          <div class="market-label">
-            <h3>Olomax on Whatnot</h3>
-            <p>
-  Find our live streams featuring popular TCGs! <br> 
-  <i><a href="https://whatnot.com/invite/olomax" target="_blank" rel="noopener noreferrer">For a $15 credit for new signups, click here for an Invite Link!</a></i>
- 
-</p>
-          </div>
+<div class="market-label">
+  <h3>Olomax on Whatnot</h3>
+  <p>
+    Find our live streams featuring popular TCGs! <br>
+    <a class="invite-button" href="https://whatnot.com/invite/olomax" target="_blank" rel="noopener noreferrer">
+      <img src="whatnot-invite-button.png" alt="Get a $15 Credit invite button" width="900" height="240" loading="lazy" decoding="async">
+    </a>
+  </p>
+</div>
         </article>
 
         <article class="market-card">
